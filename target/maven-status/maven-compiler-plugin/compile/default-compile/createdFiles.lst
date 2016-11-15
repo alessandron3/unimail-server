@@ -1,0 +1,5 @@
+br/com/unicarioca/unimail/rmi/MainApplication.class
+br/com/unicarioca/unimail/rmi/RMIServer.class
+br/com/unicarioca/unimail/rmi/MailService.class
+br/com/unicarioca/unimail/rmi/MessageDTO.class
+br/com/unicarioca/unimail/rmi/MailServiceImpl.class
