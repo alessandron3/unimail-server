@@ -1,5 +1,11 @@
 br/com/unicarioca/unimail/rmi/MainApplication.class
-br/com/unicarioca/unimail/rmi/RMIServer.class
+br/com/unicarioca/unimail/model/Message.class
 br/com/unicarioca/unimail/rmi/MailService.class
+br/com/unicarioca/unimail/model/User.class
+br/com/unicarioca/unimail/model/UserRepository.class
 br/com/unicarioca/unimail/rmi/MessageDTO.class
+br/com/unicarioca/unimail/model/MessageRepository.class
+br/com/unicarioca/unimail/rmi/RMIServer.class
+br/com/unicarioca/unimail/rmi/ResponseDTO.class
 br/com/unicarioca/unimail/rmi/MailServiceImpl.class
+br/com/unicarioca/unimail/rmi/UserDTO.class

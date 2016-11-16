@@ -2,7 +2,7 @@ package br.com.unicarioca.unimail.rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -12,6 +12,11 @@ public interface MailService extends Remote {
 
     void sendMessage(MessageDTO messageDTO) throws RemoteException;
 
-    ArrayList<MessageDTO> getMessages(int userId) throws RemoteException;
+    List<MessageDTO> getMessages(Long userId) throws RemoteException;
+
+    ResponseDTO createUser(UserDTO userDTO) throws RemoteException;
+
+    List<MessageDTO> getSentMessages(Long userId) throws RemoteException;
+
 
 }
