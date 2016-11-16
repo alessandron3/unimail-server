@@ -59,13 +59,13 @@ public class MailServiceImpl extends UnicastRemoteObject implements MailService 
     public ResponseDTO createUser(UserDTO userDTO) throws RemoteException {
 
         User checkUser = userRepository.findByEmail(userDTO.getEmail());
-        if(checkUser != null) {
+        if(checkUser == null) {
             User user = new User(userDTO.getEmail(), userDTO.getName());
-            userRepository.save(user);
-            return new ResponseDTO("created");
+            user = userRepository.save(user);
+            return new ResponseDTO("created", new UserDTO(user.getEmail(), user.getName(), user.getId()));
         }
 
-        return new ResponseDTO("email_already_exist");
+        return new ResponseDTO("email_already_exist", null);
     }
 
 
@@ -79,5 +79,15 @@ public class MailServiceImpl extends UnicastRemoteObject implements MailService 
         return messages.stream()
                 .map(m -> new MessageDTO(m.getFrom(), m.getTo(), m.getTitle(), m.getMessage()))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public ResponseDTO recoverUser(String email) throws RemoteException {
+        User user = userRepository.findByEmail(email);
+        if(user != null) {
+            return new ResponseDTO("success", new UserDTO(user.getEmail(), user.getName(), user.getId()));
+        }
+
+        return new ResponseDTO("user_not_found", null);
     }
 }

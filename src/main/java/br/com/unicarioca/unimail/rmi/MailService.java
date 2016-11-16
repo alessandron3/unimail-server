@@ -18,5 +18,7 @@ public interface MailService extends Remote {
 
     List<MessageDTO> getSentMessages(Long userId) throws RemoteException;
 
+    ResponseDTO recoverUser(String email) throws RemoteException;
+
 
 }

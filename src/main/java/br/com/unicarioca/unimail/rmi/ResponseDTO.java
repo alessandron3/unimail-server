@@ -9,8 +9,11 @@ public class ResponseDTO implements Serializable {
 
     private String status;
 
-    public ResponseDTO(String status) {
+    private UserDTO userDTO;
+
+    public ResponseDTO(String status, UserDTO userDTO) {
         this.status = status;
+        this.userDTO = userDTO;
     }
 
     public String getStatus() {
@@ -21,10 +24,19 @@ public class ResponseDTO implements Serializable {
         this.status = status;
     }
 
+    public UserDTO getUserDTO() {
+        return userDTO;
+    }
+
+    public void setUserDTO(UserDTO userDTO) {
+        this.userDTO = userDTO;
+    }
+
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("ResponseDTO{");
         sb.append("status='").append(status).append('\'');
+        sb.append(", userDTO=").append(userDTO);
         sb.append('}');
         return sb.toString();
     }

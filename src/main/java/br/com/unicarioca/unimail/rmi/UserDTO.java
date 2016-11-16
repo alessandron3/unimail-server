@@ -7,13 +7,24 @@ import java.io.Serializable;
  */
 public class UserDTO implements Serializable {
 
+    private Long id;
+
     private String email;
 
     private String name;
 
-    public UserDTO(String email, String name) {
+    public UserDTO(String email, String name, Long id) {
         this.email = email;
         this.name = name;
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -37,6 +48,7 @@ public class UserDTO implements Serializable {
         final StringBuffer sb = new StringBuffer("UserDTO{");
         sb.append("email='").append(email).append('\'');
         sb.append(", name='").append(name).append('\'');
+        sb.append(", id='").append(id).append('\'');
         sb.append('}');
         return sb.toString();
     }
