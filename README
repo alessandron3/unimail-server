@@ -1,0 +1,5 @@
+Antes de inicializar o servidor siga os seguintes passos:
+- Compilar o projeto
+- Entrar na pasta ${workspacepath}/Unimail/target/classes
+- Executar o comando "rmiregistry"
+- Inicializar o projeto
